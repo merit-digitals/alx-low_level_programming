@@ -1,33 +1,33 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <stdio.h>
 /**
- * main - function to check sign of number.
- *
- * Return: 0
- */
-
-/* betty style doc for function main goes there */
+  * main - Entry point
+  *
+  * Description: This function prints out a generated
+  *		random number
+  * Return: Always 0 (Success)
+  */
 int main(void)
 {
 	int n;
+	int last;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	if(n > 5)
+	last = n % 10;
+	/* your code goes there */
+	if (n == 0)
 	{
-		printf("%d is positive\n", n);
+		printf("Last digit of %d is 0  and is 0\n", n, last);
 	}
-	 if(n == 0)
-        {
-                printf("%d is zero\n", n);
-        }
-	  if(n < 6 )
-        {
-                printf("%d is less than 6 and not 0\n", n);
-        }
-	
+	else if (n > 5)
+	{
+		printf("Last digit of %d is %d and is greater than 5\n", n, last);
+	}
+	else if (n < 6)
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
+	}
 	return (0);
 }
